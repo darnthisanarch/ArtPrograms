@@ -1,0 +1,1049 @@
+function program_2_Clouded (){
+    //Variables for the program
+    let hills = 50
+    bgcolor = "purple"
+    
+    
+
+    function program_setup(){
+        hillcolorarray = []
+        cw = 2400
+        ch = 1300
+        noStroke()
+        print("program setup")
+        createCanvas(cw,ch)
+        background(bgcolor)
+        textSize(30)
+
+        
+        
+
+        for(let i = 0; i < hills; i++){
+
+         hillcolorarray.push(random(namedColors))
+         hillcolorarray.push(random(namedColors))
+         hillcolorarray.push(random(namedColors))
+         hillcolorarray.push(random(namedColors))
+          
+        }
+        
+    }
+
+    // function set_color_range(_c1,_c2,_c3,_c4,_hillcount,_noisecount,_noisezoom){
+    //     c1 = _c1 || "magenta"
+    //     c2 = _c2 || "cyan"
+    //     hillcount = _hillcount
+    //     noisecount = _noisecount
+    //     noisezoom = _noisezoom
+    //     result = lerpColor(color(c1),color(c2),noise((gt+(hillcount*))))
+
+    //     return result
+
+    // }
+    
+    function program_draw(){
+        //background(bgcolor)
+   
+
+
+        for(let i = 0; i < hills+1; i++){
+            
+            if( i % 5 == 0){
+
+
+                // if( noise(gt/4)> .5){
+                //     fill("white")
+                // } else {
+                //     fill("gold")
+                // }
+
+                newcolor = lerpColor(color(hillcolorarray[i]),color(hillcolorarray[hills+i]),noise((gt+(i*width))/20))
+
+            
+                
+            } else {
+                fill("skyblue")
+
+                newcolor = lerpColor(color(hillcolorarray[hills+hills+i]),color(hillcolorarray[hills+hills+hills+i]),noise((gt+(i*width))/20))
+                
+            }
+            
+            fill(newcolor)
+         
+
+            rectheight = height/hills*i + map(noise((gt+(width*i))/45),0,1,-50,50)
+
+            //left to right
+
+            if(random()>1){
+              
+                rect(gt*5,rectheight,height/hills+ map(noise((gt+(width*i))/45),0,1,-200,200))
+            
+            } else {
+                ellipse(gt*(noise(i*30)*5),rectheight,height/hills+ map(noise((gt+(width*i))/45),0,1,-400,400))
+
+            }
+
+
+        }
+
+
+
+    }
+
+
+    run()
+    function run(){
+        if(!Program_Array_Initialized){
+            program_setup()
+            Program_Array_Initialized = true
+    }  else {
+            program_draw()
+            game_timer_update()
+        }
+
+    }
+}
+
+function program_2_Painterly (){
+    //Variables for the program
+    let hills = 50
+    bgcolor = "purple"
+    
+    
+
+    function program_setup(){
+        hillcolorarray = []
+        cw = 2400
+        ch = 1300
+        noStroke()
+        print("program setup")
+        createCanvas(cw,ch)
+        background(bgcolor)
+        textSize(30)
+
+        
+        
+
+        for(let i = 0; i < hills; i++){
+
+         hillcolorarray.push(random(namedColors))
+         hillcolorarray.push(random(namedColors))
+         hillcolorarray.push(random(namedColors))
+         hillcolorarray.push(random(namedColors))
+          
+        }
+        
+    }
+
+    // function set_color_range(_c1,_c2,_c3,_c4,_hillcount,_noisecount,_noisezoom){
+    //     c1 = _c1 || "magenta"
+    //     c2 = _c2 || "cyan"
+    //     hillcount = _hillcount
+    //     noisecount = _noisecount
+    //     noisezoom = _noisezoom
+    //     result = lerpColor(color(c1),color(c2),noise((gt+(hillcount*))))
+
+    //     return result
+
+    // }
+    
+    function program_draw(){
+        //background(bgcolor)
+   
+
+
+        for(let i = 0; i < hills+1; i++){
+            
+            if( i % 5 == 0){
+
+
+                // if( noise(gt/4)> .5){
+                //     fill("white")
+                // } else {
+                //     fill("gold")
+                // }
+
+                newcolor = lerpColor(color(hillcolorarray[i]),color(hillcolorarray[hills+i]),noise((gt+(i*width))/20))
+
+            
+                
+            } else {
+                fill("skyblue")
+
+                newcolor = lerpColor(color(hillcolorarray[hills+hills+i]),color(hillcolorarray[hills+hills+hills+i]),noise((gt+(i*width))/20))
+                
+            }
+            
+            fill(newcolor)
+         
+
+            rectheight = height/hills*i + map(noise((gt+(width*i))/45),0,1,-50,50)
+
+            //left to right
+
+            if(random()>1){
+              
+                rect(gt*5,rectheight,height/hills+ map(noise((gt+(width*i))/45),0,1,-200,200))
+            
+            } else {
+                ellipse(gt*10,rectheight,height/hills+ map(noise((gt+(width*i))/45),0,1,-400,200))
+
+            }
+
+
+        }
+
+
+
+    }
+
+
+    run()
+    function run(){
+        if(!Program_Array_Initialized){
+            program_setup()
+            Program_Array_Initialized = true
+    }  else {
+            program_draw()
+            game_timer_update()
+        }
+
+    }
+}
+
+function program_2_Painterly_Landscape (){
+    //Variables for the program
+    let hills = 50
+    bgcolor = "grey"
+    
+    
+
+    function program_setup(){
+        hillcolorarray = []
+        cw = 2400
+        ch = 1300
+        noStroke()
+        print("program setup")
+        createCanvas(cw,ch)
+        background(bgcolor)
+        textSize(30)
+
+        
+        color_blues = ["skyblue","lightcyan"]
+        color_blues2 = ["midnightblue","dodgerblue"]
+        color_greens = ["green","indianred","PaleTurquoise"]
+        
+
+        for(let i = 0; i < hills; i++){
+
+        //  hillcolorarray.push(random(namedColors))
+        //  hillcolorarray.push(random(namedColors))
+        //  hillcolorarray.push(random(namedColors))
+        //  hillcolorarray.push(random(namedColors))
+
+        hillcolorarray.push(random(color_greens))
+        hillcolorarray.push(random(color_greens))
+        hillcolorarray.push(random(color_greens))
+        hillcolorarray.push(random(color_greens))
+          
+        }
+
+        for(let i = 0; i < 10 * 4; i++){
+            hillcolorarray[i] = random(color_blues)
+            hillcolorarray[hills+i] = random(color_blues2)
+        }
+
+        
+    }
+
+    // function set_color_range(_c1,_c2,_c3,_c4,_hillcount,_noisecount,_noisezoom){
+    //     c1 = _c1 || "magenta"
+    //     c2 = _c2 || "cyan"
+    //     hillcount = _hillcount
+    //     noisecount = _noisecount
+    //     noisezoom = _noisezoom
+    //     result = lerpColor(color(c1),color(c2),noise((gt+(hillcount*))))
+
+    //     return result
+
+    // }
+    
+    function program_draw(){
+        //background(bgcolor)
+   
+
+
+        for(let i = 0; i < hills+1; i++){
+            
+            if( i % 1 == 0){
+
+
+                // if( noise(gt/4)> .5){
+                //     fill("white")
+                // } else {
+                //     fill("gold")
+                // }
+
+                newcolor = lerpColor(color(hillcolorarray[i]),color(hillcolorarray[hills+i]),noise((gt+(i*width))/20))
+
+            
+                
+            } else {
+                fill("skyblue")
+
+                newcolor = lerpColor(color(hillcolorarray[hills+hills+i]),color(hillcolorarray[hills+hills+hills+i]),noise((gt+(i*width))/20))
+                
+            }
+            
+            fill(newcolor)
+         
+
+            rectheight = height/hills*i + map(noise((gt+(width*i))/45),0,1,-150,150)
+
+            //left to right
+
+            if(random()>1){
+              
+                rect(gt*5,rectheight,height/hills+ map(noise((gt+(width*i))/45),0,1,-200,200))
+            
+            } else {
+                ellipse(gt*10,rectheight,height/hills+ map(noise((gt+(width*i))/45),0,1,-400,200))
+
+            }
+
+
+        }
+
+
+
+    }
+
+
+    run()
+    function run(){
+        if(!Program_Array_Initialized){
+            program_setup()
+            Program_Array_Initialized = true
+    }  else {
+            program_draw()
+            game_timer_update()
+        }
+
+    }
+}
+
+
+function program_2_Painterly_Landscape_2 (){
+    //Variables for the program
+    let hills = 1003
+    bgcolor = "pink"
+    
+    
+
+    function program_setup(){
+        hillcolorarray = []
+        cw = 2400
+        ch = 1300
+        noStroke()
+        print("program setup")
+        createCanvas(cw,ch)
+        background(bgcolor)
+        textSize(30)
+
+        
+        color_blues = ["skyblue","lightcyan"]
+        color_blues2 = ["midnightblue","dodgerblue"]
+        color_greens = ["green","indianred","PaleTurquoise","olive","limegreen"]
+        
+
+        for(let i = 0; i < hills; i++){
+
+        //  hillcolorarray.push(random(namedColors))
+        //  hillcolorarray.push(random(namedColors))
+        //  hillcolorarray.push(random(namedColors))
+        //  hillcolorarray.push(random(namedColors))
+
+        hillcolorarray.push(random(color_greens))
+        hillcolorarray.push(random(color_greens))
+        hillcolorarray.push(random(color_greens))
+        hillcolorarray.push(random(color_greens))
+          
+        }
+
+        for(let i = 0; i < 10 * 4; i++){
+            hillcolorarray[i] = random(color_blues)
+            hillcolorarray[hills+i] = random(color_blues2)
+        }
+
+        
+    }
+
+    // function set_color_range(_c1,_c2,_c3,_c4,_hillcount,_noisecount,_noisezoom){
+    //     c1 = _c1 || "magenta"
+    //     c2 = _c2 || "cyan"
+    //     hillcount = _hillcount
+    //     noisecount = _noisecount
+    //     noisezoom = _noisezoom
+    //     result = lerpColor(color(c1),color(c2),noise((gt+(hillcount*))))
+
+    //     return result
+
+    // }
+    
+    function program_draw(){
+        //background(bgcolor)
+   
+
+
+        for(let i = 0; i < hills+1; i++){
+            
+            if( i % 1 == 0){
+
+
+                // if( noise(gt/4)> .5){
+                //     fill("white")
+                // } else {
+                //     fill("gold")
+                // }
+
+                newcolor = lerpColor(color(hillcolorarray[i]),color(hillcolorarray[hills+i]),noise((gt+(i*width))/20))
+
+            
+                
+            } else {
+                fill("skyblue")
+
+                newcolor = lerpColor(color(hillcolorarray[hills+hills+i]),color(hillcolorarray[hills+hills+hills+i]),noise((gt+(i*width))/20))
+                
+            }
+            
+            fill(newcolor)
+         
+
+            rectheight = height/hills*i 
+
+
+            //left to right
+
+            if(random()>1){
+              
+                rect(gt*5,rectheight, map(noise((gt+(width*i))/45),0,1,-(height/hills),(height/hills)))
+            
+            } else {
+                
+                ex = gt*5
+                ey = i*10 - (gt/5)
+                ew = 30
+                eh = ew
+
+                ellipse(ex,ey,ew,eh)
+
+            }
+
+
+        }
+
+
+
+    }
+
+
+    run()
+    function run(){
+        if(!Program_Array_Initialized){
+            program_setup()
+            Program_Array_Initialized = true
+    }  else {
+            program_draw()
+            game_timer_update()
+        }
+
+    }
+}
+
+
+function program_2_DappledWater (){
+    //Variables for the program
+    let hills = 1000
+    bgcolor = "purple"
+    hillcolorarray = []
+    
+
+    function program_setup(){
+        cw = 2400
+        ch = 1300
+        noStroke()
+        print("program setup")
+        createCanvas(cw,ch)
+        background(bgcolor)
+        textSize(30)
+
+        
+        
+
+
+        
+    }
+
+
+    
+    function program_draw(){
+        //background(bgcolor)
+   
+
+
+        for(let i = 0; i < hills+1; i++){
+            
+            if( i % 5 == 0){
+
+
+                // if( noise(gt/4)> .5){
+                //     fill("white")
+                // } else {
+                //     fill("gold")
+                // }
+
+                if(gt*5 < width/3){
+                    newcolor = lerpColor(color("white"),color("orange"),noise((gt+(i*width))/20))
+                } else if (gt*5 < width*2/3) {
+                    newcolor = lerpColor(color("white"),color("gold"),noise((gt+(i*width))/20))
+                } else {
+                    newcolor = lerpColor(color("white"),color("yellow"),noise((gt+(i*width))/20))
+                }
+
+                newcolor = lerpColor(newcolor,color("white"),(gt*5)/width)
+            
+                
+            } else {
+                fill("skyblue")
+
+                newcolor = lerpColor(color("blue"),color("skyblue"),noise((gt+(i*width))/30))
+            }
+            
+            fill(newcolor)
+         
+
+            rectheight = height/hills*i + map(noise((gt+(width*i))/45),0,1,-50,50)
+
+            //left to right
+
+            if(random()<1){
+              
+                rect(gt*5,rectheight,500)
+            
+            } else {
+                ellipse(gt*5,rectheight,height/hills+ map(noise((gt+(width*i))/45),0,1,-200,200))
+
+            }
+
+
+        }
+
+
+
+    }
+
+
+    run()
+    function run(){
+        if(!Program_Array_Initialized){
+            program_setup()
+            Program_Array_Initialized = true
+    }  else {
+            program_draw()
+            game_timer_update()
+        }
+
+    }
+}
+
+
+function program_3_Triptych (){
+    //Variables for the program
+    let hills = 1040
+    bgcolor = "pink"
+    
+    
+
+    function program_setup(){
+        hillcolorarray = []
+        cw = 2400
+        ch = 1300
+        noStroke()
+        print("program setup")
+        createCanvas(cw,ch)
+        background(bgcolor)
+        textSize(30)
+
+        
+        color_blues = ["skyblue","lightcyan","blue","navy"]
+        color_blues2 = ["midnightblue","dodgerblue"]
+        color_greens = ["green","indianred","PaleTurquoise","olive","limegreen"]
+
+
+        trip1 = color("indianred")
+        
+        trip2 = color(random(namedColors))
+        
+        trip3 = color("Gold")
+        
+
+        for(let i = 0; i < hills; i++){
+
+        //  hillcolorarray.push(random(namedColors))
+        //  hillcolorarray.push(random(namedColors))
+        //  hillcolorarray.push(random(namedColors))
+        //  hillcolorarray.push(random(namedColors))
+
+        hillcolorarray.push(random(color_greens))
+        hillcolorarray.push(random(color_greens))
+        hillcolorarray.push(random(color_greens))
+        hillcolorarray.push(random(color_greens))
+          
+        }
+
+        for(let i = 0; i < 20 * 4; i++){
+            hillcolorarray[i] = random(color_blues)
+            hillcolorarray[hills+i] = random(color_blues2)
+        }
+
+        
+    }
+
+    // function set_color_range(_c1,_c2,_c3,_c4,_hillcount,_noisecount,_noisezoom){
+    //     c1 = _c1 || "magenta"
+    //     c2 = _c2 || "cyan"
+    //     hillcount = _hillcount
+    //     noisecount = _noisecount
+    //     noisezoom = _noisezoom
+    //     result = lerpColor(color(c1),color(c2),noise((gt+(hillcount*))))
+
+    //     return result
+
+    // }
+    
+    function program_draw(){
+        //background(bgcolor)
+   
+
+
+        for(let i = 0; i < hills+1; i++){
+            
+            if( i % 1 == 0){
+
+
+                // if( noise(gt/4)> .5){
+                //     fill("white")
+                // } else {
+                //     fill("gold")
+                // }
+
+                newcolor = lerpColor(color(hillcolorarray[i]),color(hillcolorarray[hills+i]),noise((gt+(i*width))/20))
+
+
+
+            
+                
+            } else {
+                fill("skyblue")
+
+                newcolor = lerpColor(color(hillcolorarray[hills+hills+i]),color(hillcolorarray[hills+hills+hills+i]),noise((gt+(i*width))/20))
+                
+                
+
+
+
+
+            }
+            
+            fill(newcolor)
+         
+
+            rectheight = height/hills*i 
+
+
+            //left to right
+
+            if(random()>1){
+              
+                rect(gt*5,rectheight, map(noise((gt+(width*i))/45),0,1,-(height/hills),(height/hills)))
+            
+            } else {
+                
+                ex = gt*3 
+                ey = i*10 + map(noise((gt+(i*width))/20),0,1,-20,20)
+                ew = 50 + map(noise((gt+(i*width))/104),0,1,-200,200)
+                eh = ew + map(noise((gt+(i*width))/90),0,1,-200,200)
+
+
+                triprandom = random()
+
+                if(ex < width/3){
+                    newcolor = lerpColor(color(newcolor),color(trip1),noise((gt+(i*width))/50))
+                } else if(ex < width * 2/3) {
+                    newcolor = lerpColor(color(newcolor),color(trip2),noise((gt+(i*width))/50))
+                    
+                } else {
+                    newcolor = lerpColor(color(newcolor),color(trip3),noise((gt+(i*width))/50))
+                }
+                
+                
+                
+                fill(newcolor)
+
+                ellipse(ex,ey,ew,eh)
+
+            }
+
+
+        }
+
+
+
+    }
+
+
+    run()
+    function run(){
+        if(!Program_Array_Initialized){
+            program_setup()
+            Program_Array_Initialized = true
+    }  else {
+            program_draw()
+            game_timer_update()
+        }
+
+    }
+}
+
+function program_3_Triptych_2 (){
+    //Variables for the program
+    let hills = 1040
+    bgcolor = "pink"
+    
+    
+
+    function program_setup(){
+        hillcolorarray = []
+        cw = 2400
+        ch = 1300
+        noStroke()
+        print("program setup")
+        createCanvas(cw,ch)
+        background(bgcolor)
+        textSize(30)
+
+        
+        color_blues = ["skyblue","lightcyan","blue","navy"]
+        color_blues2 = ["midnightblue","dodgerblue"]
+        color_greens = ["green","indianred","PaleTurquoise","olive","limegreen"]
+
+
+        trip1 = color(random(color_blues))
+        
+        trip2 = color(random(namedColors))
+        
+        trip3 = color(random(namedColors))
+        
+
+        for(let i = 0; i < hills; i++){
+
+        //  hillcolorarray.push(random(namedColors))
+        //  hillcolorarray.push(random(namedColors))
+        //  hillcolorarray.push(random(namedColors))
+        //  hillcolorarray.push(random(namedColors))
+
+        hillcolorarray.push(random(color_greens))
+        hillcolorarray.push(random(color_greens))
+        hillcolorarray.push(random(color_greens))
+        hillcolorarray.push(random(color_greens))
+          
+        }
+
+        for(let i = 0; i < 100 * 4; i++){
+            hillcolorarray[i] = random(color_blues)
+            hillcolorarray[hills+i] = random(color_blues2)
+        }
+
+        
+    }
+
+    // function set_color_range(_c1,_c2,_c3,_c4,_hillcount,_noisecount,_noisezoom){
+    //     c1 = _c1 || "magenta"
+    //     c2 = _c2 || "cyan"
+    //     hillcount = _hillcount
+    //     noisecount = _noisecount
+    //     noisezoom = _noisezoom
+    //     result = lerpColor(color(c1),color(c2),noise((gt+(hillcount*))))
+
+    //     return result
+
+    // }
+    
+    function program_draw(){
+        //background(bgcolor)
+   
+
+
+        for(let i = 0; i < hills+1; i++){
+            
+            if( i % 1 == 0){
+
+
+                // if( noise(gt/4)> .5){
+                //     fill("white")
+                // } else {
+                //     fill("gold")
+                // }
+
+                newcolor = lerpColor(color(hillcolorarray[i]),color(hillcolorarray[hills+i]),noise((gt+(i*width))/20))
+
+
+
+            
+                
+            } else {
+                fill("skyblue")
+
+                newcolor = lerpColor(color(hillcolorarray[hills+hills+i]),color(hillcolorarray[hills+hills+hills+i]),noise((gt+(i*width))/20))
+                
+                
+
+
+
+
+            }
+            
+            fill(newcolor)
+         
+
+            rectheight = height/hills*i 
+
+
+            //left to right
+
+            if(random()>1){
+              
+                rect(gt*5,rectheight, map(noise((gt+(width*i))/45),0,1,-(height/hills),(height/hills)))
+            
+            } else {
+                
+                ex = gt*3 
+                es = map(noise(i),0,1,10,150)
+                ey = i*2 + map(noise((gt+(i*width))/20),0,1,-50,50)
+                ew = 50 + map(noise((gt+(i*width))/104),0,1,-25,25)
+                eh = 50 + map(noise((gt+(i*width))/90),0,1,-es,es)
+
+
+                triprandom = random()
+
+                if(ex < width/3){
+       
+                    newcolor = lerpColor(color(newcolor),color(trip1),noise((gt+(i*width))/1000))
+                } else if(ex < width * 2/3) {
+
+                    newcolor = lerpColor(color(newcolor),color(trip2),noise((gt+(i*width))/510))
+                    
+                } else {
+               
+                    newcolor = lerpColor(color(newcolor),color(trip3),noise((gt+(i*width))/60))
+                }
+                
+                
+                
+                fill(newcolor)
+
+                ellipse(ex,ey,ew,eh)
+
+            }
+
+
+        }
+
+
+
+    }
+
+
+    run()
+    function run(){
+        if(!Program_Array_Initialized){
+            program_setup()
+            Program_Array_Initialized = true
+    }  else {
+            program_draw()
+            game_timer_update()
+        }
+
+    }
+}
+
+
+function program_3_Triptych_3 (){
+    //Variables for the program
+    let hills = 1000
+    bgcolor = "pink"
+    let horizonnum = 125
+    
+    
+
+    function program_setup(){
+        hillcolorarray = []
+        cw = 2400
+        ch = 1300
+        noStroke()
+        print("program setup")
+        createCanvas(cw,ch)
+        background(bgcolor)
+        textSize(30)
+
+        
+        color_blues = ["skyblue","navy","paleTurquoise","SteelBlue","SteelBlue","SteelBlue","SteelBlue","SteelBlue","SteelBlue"]
+        color_blues2 = ["midnightblue","dodgerblue","dodgerblue","dodgerblue", "dodgerblue","dodgerblue","dodgerblue","dodgerblue"]
+        color_greens = ["lightsalmon","PaleTurquoise","limegreen","lime","ForestGreen","DarkGreen"]
+
+
+        trip1 = color(random(color_blues))
+        
+        trip2 = color(random(namedColors))
+        
+        trip3 = color(random(namedColors))
+        
+
+        for(let i = 0; i < hills; i++){
+
+        //  hillcolorarray.push(random(namedColors))
+        //  hillcolorarray.push(random(namedColors))
+        //  hillcolorarray.push(random(namedColors))
+        //  hillcolorarray.push(random(namedColors))
+
+        hillcolorarray.push(random(color_greens))
+        hillcolorarray.push(random(color_greens))
+        hillcolorarray.push(random(color_greens))
+        hillcolorarray.push(random(color_greens))
+          
+        }
+
+        for(let i = 0; i < horizonnum * 4; i++){
+            hillcolorarray[i] = random(color_blues)
+            hillcolorarray[hills+i] = random(color_blues2)
+
+        }
+
+        
+    }
+
+    // function set_color_range(_c1,_c2,_c3,_c4,_hillcount,_noisecount,_noisezoom){
+    //     c1 = _c1 || "magenta"
+    //     c2 = _c2 || "cyan"
+    //     hillcount = _hillcount
+    //     noisecount = _noisecount
+    //     noisezoom = _noisezoom
+    //     result = lerpColor(color(c1),color(c2),noise((gt+(hillcount*))))
+
+    //     return result
+
+    // }
+    
+    function program_draw(){
+        //background(bgcolor)
+   
+
+
+        for(let i = 0; i < hills+1; i++){
+            
+            if( i % 1 == 0){
+
+
+                // if( noise(gt/4)> .5){
+                //     fill("white")
+                // } else {
+                //     fill("gold")
+                // }
+
+                newcolor = lerpColor(color(hillcolorarray[i]),color(hillcolorarray[hills+i]),noise((gt+(i*width))/20))
+
+
+
+            
+                
+            } else {
+                fill("skyblue")
+
+                newcolor = lerpColor(color(hillcolorarray[hills+hills+i]),color(hillcolorarray[hills+hills+hills+i]),noise((gt+(i*width))/20))
+                
+                
+
+
+
+
+            }
+            
+            fill(newcolor)
+         
+
+            rectheight = height/hills*i 
+
+
+            //left to right
+
+            if(random()>1){
+              
+                rect(gt*5,rectheight, map(noise((gt+(width*i))/45),0,1,-(height/hills),(height/hills)))
+            
+            } else {
+                
+                ex = gt * 6/1.82
+                es = map(noise(i/2000),0,1,105,550)
+                ey = i*2 + map(noise((gt+(i*width))/300),0,1,-170,170)
+                ew = 50 + map(noise((gt+(i*width))/104),0,1,-50,50)
+                eh = 50 + map(noise((gt+(i*width))/90),0,1,-es,es)
+
+
+                triprandom = random()
+
+                if(ex < width/3){
+       
+                    newcolor = lerpColor(color(newcolor),color("IndianRed"),noise((gt+(i*width))/600))
+                } else if(ex < width * 2/3) {
+
+                    newcolor = lerpColor(color(newcolor),color("PapayaWhip"),noise((gt+(i*width))/600))
+                    
+                } else {
+               
+                    newcolor = lerpColor(color(newcolor),color("Navy"),noise((gt+(i*width))/600))
+                }
+                
+
+                if (i < horizonnum * 4){
+                newcolor.setAlpha(50)
+                }
+                
+                
+                fill(newcolor)
+
+                ellipse(ex,ey,ew,eh)
+
+            }
+
+
+        }
+
+
+
+    }
+
+
+    run()
+    function run(){
+        if(!Program_Array_Initialized){
+            program_setup()
+            Program_Array_Initialized = true
+    }  else {
+            program_draw()
+            game_timer_update()
+        }
+
+    }
+}
